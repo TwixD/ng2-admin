@@ -4,4 +4,30 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 @mixin nga-layout-theme() {
+  /deep/ nga-layout {
+    color: $nga-layout-foreground;
+    background: $nga-layout-background;
+    min-height: $nga-layout-min-height;
+
+    /deep/ nga-layout-header {
+      height: $nga-header-height;
+      color: $nga-header-foreground;
+      background: $nga-header-background;
+
+      &.fixed ~ .container {
+        padding-top: $nga-layout-padding;
+      }
+
+      .container {
+        .content {
+          /deep/ nga-layout-footer {
+            height: $nga-footer-height;
+            color: $nga-footer-foreground;
+            background: $nga-footer-background;
+            border-top: 1px solid $nga-footer-separator;
+          }
+        }
+      }
+    }
+  }
 }

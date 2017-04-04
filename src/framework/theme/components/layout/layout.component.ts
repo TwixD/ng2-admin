@@ -93,6 +93,7 @@ export class NgaLayoutFooterComponent {
   template: `
     <ng-content select="nga-layout-header"></ng-content>
     <div class="container">
+      <ng-content select="nga-sidebar"></ng-content>
       <ng-content select="nga-sidebar[left]"></ng-content>
       <div class="content" [ngClass]="{ 'center': centerValue }">
         <div class="columns">
